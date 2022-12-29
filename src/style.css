@@ -1,0 +1,167 @@
+:root {
+  font: 16px / 1 sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.toad {
+  display: flex;
+  position: relative;
+  background: beige;
+  height: 100px;
+  width: 115px;
+  border-radius: 31% 30% 44% 42% / 47% 41% 43% 41%;
+  top: 80px;
+  z-index: 2;
+  border: 4px solid black;
+  box-shadow: 5px 5px 10px 2px rgba(225, 20, 20, 0.8);
+}
+.head {
+  display: flex;
+  position: relative;
+  content: '';
+  background: rgb(112, 105, 105);
+  background: linear-gradient(
+    0deg,
+    rgb(56, 54, 54) 0%,
+    rgba(241, 7, 7, 1) 100%
+  );
+  height: 190px;
+  width: 220px;
+  top: -180px;
+  left: -52px;
+  border-radius: 49% 50% 45% 45% / 58% 58% 40% 42%;
+  z-index: 1;
+  box-shadow: 5px 5px 10px 2px rgba(225, 20, 20, 0.8);
+}
+
+.toad-face {
+  position: relative;
+  background: rgb(48, 47, 47);
+  height: 30px;
+  width: 15px;
+  border-radius: 50%;
+  top: 5px;
+  left: 30px;
+  z-index: 3;
+  box-shadow: 40px 0 rgb(48, 47, 47);
+  animation: blink 6s infinite;
+}
+
+.toad-face::after {
+  position: absolute;
+  content: '';
+  background: white;
+  height: 10px;
+  width: 5px;
+  border-radius: 50%;
+  left: 5px;
+  top: 5px;
+  box-shadow: 40px 0 white;
+}
+
+.mouth {
+  position: absolute;
+  content: '';
+  background: transparent;
+  width: 40%;
+  height: 20%;
+  border: 1px solid #222;
+  border-top: 0;
+  border-bottom-left-radius: 260px 190px;
+  border-bottom-right-radius: 260px 190px;
+  position: relative;
+  bottom: 16%;
+  left: 30%;
+  z-index: 3;
+}
+
+.dimple-left {
+  height: 0px;
+  width: 10px;
+  background: transparent;
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  transform: rotate(-45deg);
+  border: 1px solid black;
+}
+.dimple-right {
+  height: 0px;
+  width: 10px;
+  background: transparent;
+  position: absolute;
+  top: 70px;
+  left: 75px;
+  transform: rotate(45deg);
+  border: 0.5px solid black;
+}
+
+.dots {
+  background: white;
+  position: relative;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  top: -340px;
+  left: 27px;
+  z-index: 3;
+}
+
+.dots-right {
+  background: white;
+  position: relative;
+  border-radius: 58% 58% 40% 42%;
+  height: 30px;
+  width: 60px;
+  transform: rotate(270deg);
+  top: -350px;
+  left: 122px;
+  z-index: 3;
+}
+
+.dots-left {
+  background: white;
+  position: relative;
+  border-radius: 58% 58% 40% 42%;
+  height: 30px;
+  width: 60px;
+  transform: rotate(450deg);
+  top: -380px;
+  left: -65px;
+  z-index: 3;
+}
+
+@keyframes blink {
+  0%,
+  9%,
+  11%,
+  19%,
+  21%,
+  69%,
+  71%,
+  100% {
+    transform: scaleY(1);
+  }
+  10%,
+  20%,
+  70% {
+    transform: scaleY(0);
+  }
+}
